@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-/* main entry point
+/*
+ * main entry point
  * this program return 1
- */ 
+*/
 
 int main(void)
 
