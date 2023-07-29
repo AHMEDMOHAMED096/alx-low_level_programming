@@ -9,24 +9,18 @@
 
 int main(void)
 	{
-int i, j, n, k;
-	for (i = 0; i < 10; i++)
+int i, j;
+	for (i = 0; i < 100; i++)
 	{
-	for (j = 0; j < 10; j++)
+	for (j = i + 1; j < 100; j++)
 	{
-	for (n = 0; n < 10; n++)
-	{
-	for (k = n + 1; k < 10; k++)
-	{
-	putchar('0' + i);
-	putchar('0' + j);
+	putchar('0' + i / 10);
+	putchar('0' + i % 10);
 	putchar(' ');
-	putchar('0' + n);
-	putchar('0' + k);
+	putchar('0' + j / 10);
+	putchar('0' + j % 10);
 	putchar(',');
 	putchar(' ');
-	}
-	}
 	}
 	}
 	putchar('\n');
