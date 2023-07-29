@@ -20,10 +20,10 @@ int i, j;
 	{
 	putchar(',');
 	putchar(' ');
+	}
+	}
+	}
 	putchar('\n');
-	}
-	}
-	}
 	return (0);
 }
 
