@@ -2,10 +2,11 @@
 /**
  * main - Entry point
  *
- * A program to print different possible three digits combinations
+ * A program to print all possible combinations of two two-digit numbers
  * Return: always return 0
  */
 #include <stdio.h>
+
 int main(void)
 	{
 int i, j, n, k;
@@ -31,4 +32,3 @@ int i, j, n, k;
 	putchar('\n');
 	return (0);
 	}
-
