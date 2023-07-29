@@ -8,14 +8,14 @@
 #include <stdio.h>
 
 int main(void)
-{
+	{
 int i, j, n;
 	for (i = 0; i < 10; i++)
 	{
 	for (j = i + 1; j < 10; j++)
 	{
-    for (n = j + 1; n < 10; n++)
-    {
+	for (n = j + 1; n < 10; n++)
+	{
 	putchar('0' + i);
 	putchar('0' + j);
 	putchar('0' + n);
@@ -23,10 +23,10 @@ int i, j, n;
 	{
 	putchar(',');
 	putchar(' ');
-    }
+	}
 	}
 	}
 	}
 	putchar('\n');
 	return (0);
-}
+	}
