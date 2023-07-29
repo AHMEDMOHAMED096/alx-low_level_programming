@@ -20,6 +20,7 @@ int i, j;
 	{
 	putchar(',');
 	putchar(' ');
+	putchar('\n');
 	}
 	}
 	}
