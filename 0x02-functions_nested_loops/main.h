@@ -2,3 +2,6 @@
 #define MAIN_H
 
 int putchar(char);
+
+
+#endif
