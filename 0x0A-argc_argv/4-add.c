@@ -14,10 +14,10 @@ int main(int argc, char* argv[])
 {
 	int i, add = 0;
 	char *c;
-	c = &argv[i];
 
 for (i = 1; i < argc; i++)
 {
+	c = &argv[i];
 	while (*c != '\0')
 	{
 		if (*c < '0' || *c > '9')
