@@ -18,7 +18,7 @@ for (i = 1; i < argc; i++)
 {
 	num = atoi(argv[i]);
 		if (isdigit(num))
-		add += atoi(argv[i]);
+		add += num;
 		else if (argc == 1)
 		printf("0\n");
 		else
