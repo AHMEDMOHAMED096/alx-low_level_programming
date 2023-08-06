@@ -12,16 +12,15 @@
 
 int main(int argc, char *argv[])
 {
-	int i, add = 0, count;
-	char j[30];
+	int i, add = 0;
+	char *j;
 
 for (i = 1; i < argc; i++)
 {
-		count = strlen(j);
-		count = atoi(argv[i]);
-		while (count != '\0')
+	*j = &argv[i];
+		while (*j != '\0')
 		{
-		if (count < '0' || count > '9')
+		if (*j < '0' || *j > '9')
 		{
 		printf("Error\n");
 		return (1);
