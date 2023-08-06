@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
 
 for (i = 1; i < argc; i++)
 {
+	c = (argv[i]);
 	while (*c != '\0')
 	{
-	c = (argv[i]);
 		if (argc == 1)
 		{
 		printf("0\n");
