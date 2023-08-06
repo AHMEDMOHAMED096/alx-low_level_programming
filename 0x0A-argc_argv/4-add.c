@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int add = 0;
 	char *c;
 
-for (c = argv[argc]; *c < argc; c++)
+for (c = argv[argc]; *c; c++)
 {
 	while (*c != '\0')
 	{
