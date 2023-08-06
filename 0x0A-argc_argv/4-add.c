@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main - entry point to the program
@@ -11,15 +12,16 @@
 
 int main(int argc, char *argv[])
 {
-	int i, add = 0;
+	int i, add = 0, count;
 	char j[30];
 
 for (i = 1; i < argc; i++)
 {
-		j[30] = argv[i];
-		while (j[30] != '\0')
+		count = strlen(j);
+		count = argv[i];
+		while (count != '\0')
 		{
-		if (j[30] < '0' || j[30] > '9')
+		if (count < '0' || count > '9')
 		{
 		printf("Error\n");
 		return (1);
