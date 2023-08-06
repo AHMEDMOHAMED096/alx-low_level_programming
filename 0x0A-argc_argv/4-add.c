@@ -23,14 +23,13 @@ for (i = 1; i < argc; i++)
 		{
 		printf("Error\n");
 		return (1);
+		}
 			else if (argc == 1)
 			{
 			printf("0\n");
-			else
-			add += atoi(argv[i]);
-			}
-		}	
+			}	
 	}
+		add += atoi(argv[i]);
 }
 	printf("%d\n", add);
 
