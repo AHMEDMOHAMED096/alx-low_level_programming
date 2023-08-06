@@ -29,7 +29,7 @@ for (i = 1; i < argc; i++)
 			if (argc == 1)
 			printf("0\n");
 			else
-			add += atoi(argv[argc]);
+			add += atoi(argv[i]);
 }
 	printf("%d\n", add);
 
