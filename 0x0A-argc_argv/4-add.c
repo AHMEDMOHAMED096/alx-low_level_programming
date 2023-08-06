@@ -17,20 +17,21 @@ int main(int argc, char *argv[])
 if (argc == 1)
 printf("0\n");
 
-while (*j != '\0')
+for (i = 1; i < argc; i++)
 {
-	j = argv[i];
-	for (i = 1; i < argc; i++)
-	{
+		while (*j != '\0')
+		{
+		j = argv[i];
 		if (*j < '0' || *j > '9')
-		{	
+		{
 		printf("Error\n");
 		return (1);
 		}
 		else
 		add += atoi(argv[i]);
-	}
-	printf("%d\n", add);
+		}
 }
+	printf("%d\n", add);
+
 	return (0);
 }
