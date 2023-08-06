@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 for (i = 1; i < argc; i++)
 {
-	char *c;
+	int *c;
 	c = &argv[i];
 	while (*c != '\0')
 	{
