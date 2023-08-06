@@ -20,13 +20,13 @@ for (i = 1; i < argc; i++)
 {
 	while (*c != '\0')
 	{
-		if (*c < '0' || *c > '9')
+		if (argc == 1)
+		printf("0\n");
+		else if (*c < '0' || *c > '9')
 		{
 		printf("Error\n");
 		return (1);
 		}
-		else if (argc == 1)
-		printf("0\n");
 		else
 		add += atoi(argv[i]);
 	}
