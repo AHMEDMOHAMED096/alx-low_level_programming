@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 for (i = 1; i < argc; i++)
 {
 		count = strlen(j);
-		count = argv[i];
+		count = atoi(argv[i]);
 		while (count != '\0')
 		{
 		if (count < '0' || count > '9')
