@@ -13,15 +13,11 @@
 int main(int argc, char *argv[])
 {
 	int i, add = 0 , num;
-	//char *j;
 
 for (i = 1; i < argc; i++)
 {
 	num = atoi(argv[i]);
-	//*j = argv[i];
-	//while (*j != '\0')
 	{
-		//if (*j < '0' || *j > '9')
 		if (isdigit(num))
 		add += atoi(argv[i]);
 		else if (argc == 1)
