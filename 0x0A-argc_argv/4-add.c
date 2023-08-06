@@ -12,14 +12,14 @@
 int main(int argc, char *argv[])
 {
 	int i, add = 0;
-	//char *j;
+	char *j;
 
 for (i = 1; i < argc; i++)
 {
-	//j = argv[i];
+	j = argv[i];
 	while (argv[i] != '\0')
 	{
-		if (argv[i] < '0' || argv[i] > '9')
+		if (*j < '0' || *j > '9')
 		{
 		printf("Error\n");
 		return (1);
