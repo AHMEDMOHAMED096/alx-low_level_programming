@@ -13,13 +13,13 @@
 int main(int argc, char *argv[])
 {
 	int i, add = 0;
-	char *j;
+	char *j = &argv[]
 
 for (i = 1; i < argc; i++)
 {
 	while (*j != '\0')
 	{
-		j = &argv[i];
+		*j = &argv[i];
 		if (*j < '0' || *j > '9')
 		{
 		printf("Error\n");
