@@ -30,7 +30,7 @@ for (c = argv[argc]; *c < argc; c++)
 		}
 		else
 		{
-		add += atoi(argv[i]);
+		add += atoi(argv[argc]);
 		}
 	}
 }
