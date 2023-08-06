@@ -14,22 +14,24 @@ int main(int argc, char *argv[])
 	int i, add = 0;
 	char *j;
 
-	for (i = 1; i < argc; i++)
+	while (j > '\0')
 	{
 	j = argv[i];
-	if (argc == 1)
-	{
-	printf("0\n");
-	}
+		if (*j < '0' || *j > '9')
+		{
+		printf("Error\n");
+		return (1);
+		}
+		for (i = 1; i < argc; i++)
+		{
+		else if (argc == 1)
+		{
+		printf("0\n");
+		}
 
-	else if (*j < '0' || *j > '9')
-	{
-	printf("Error\n");
-	return (1);
-	}
-
-	else
-	add += atoi(argv[i]);
+		else
+		add += atoi(argv[i]);
+		}
 	}
 	printf("%d\n", add);
 	return (0);
