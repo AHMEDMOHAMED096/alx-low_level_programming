@@ -12,12 +12,11 @@
 
 int main(int argc, char *argv[])
 {
-	int i, add = 0;
+	int add = 0;
 	char *c;
 
-for (i = 1; i < argc; i++)
+for (c = argv[argc]; *c < argc; c++)
 {
-	c = (argv[i]);
 	while (*c != '\0')
 	{
 		if (argc == 1)
