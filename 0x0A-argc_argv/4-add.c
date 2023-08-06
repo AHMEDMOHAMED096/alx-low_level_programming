@@ -12,12 +12,11 @@
 
 int main(int argc, char *argv[])
 {
-	int i, add = 0;
-	char *num;
+	int i, add = 0, num;
 
 for (i = 1; i < argc; i++)
 {
-	num = argv[i];
+	num = atoi(argv[i]);
 		if (isdigit(num))
 		add += atoi(argv[i]);
 		else if (argc == 1)
