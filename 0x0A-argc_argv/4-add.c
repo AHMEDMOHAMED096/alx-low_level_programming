@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
 
 for (i = 1; i < argc; i++)
 {
-	int *c;
-	c = &(argv[i]);
+	char *c;
+	c = (argv[i]);
 	while (*c != '\0')
 	{
 		if (*c < '0' || *c > '9')
