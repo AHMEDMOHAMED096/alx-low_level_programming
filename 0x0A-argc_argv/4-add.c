@@ -10,13 +10,13 @@
  * Return: always 0
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
 	int i, add = 0;
 	char *c;
 
 for (i = 1; i < argc; i++)
-	c = *argv[i];
+	c = argv[i];
 {
 		if (isdigit(c))
 		add += atoi(argv[i]);
