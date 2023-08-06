@@ -17,19 +17,17 @@ int main(int argc, char *argv[])
 for (i = 1; i < argc; i++)
 {
 	j = argv[i];
-	while (*j != '\0')
+	while (argv[i] <= argv[0] || argv[i] != '\0')
 	{
+		printf("0\n");
 		if (*j < '0' || *j > '9')
 		{
 		printf("Error\n");
 		return (1);
 		}
-			else if (argc == 1)
-			{
-			printf("0\n");
-			}	
-	}
+		else 
 		add += atoi(argv[i]);
+	}
 }
 	printf("%d\n", add);
 
