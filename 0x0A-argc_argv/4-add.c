@@ -13,10 +13,10 @@
 int main(int argc, char *argv[])
 {
 	int i, add = 0;
+	char *c;
 
 for (i = 1; i < argc; i++)
 {
-	char *c;
 	c = (argv[i]);
 	while (*c != '\0')
 	{
