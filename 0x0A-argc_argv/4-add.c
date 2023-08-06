@@ -17,10 +17,10 @@ int main(int argc, char *argv[])
 
 for (i = 1; i < argc; i++)
 {
-	j = argv[i];
-	while (*j > '\0')
+	*j = argv[i];
+	while (j > '\0')
 	{
-		if (*j < '0' || *j > '9')
+		if (j < '0' || j > '9')
 		{
 		printf("Error\n");
 		return (1);
