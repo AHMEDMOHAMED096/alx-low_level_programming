@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 	int i, add = 0, num;
 
 for (i = 1; i < argc; i++)
-{
 	num = atoi(argv[i]);
+{
 		if (isdigit(num))
 		add += num;
 		else if (argc == 1)
