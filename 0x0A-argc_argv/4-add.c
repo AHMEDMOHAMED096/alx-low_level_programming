@@ -12,12 +12,13 @@
 
 int main(int argc, char *argv[])
 {
-	int i, add = 0, num;
+	int i, add = 0;
+	char c;
 
 for (i = 1; i < argc; i++)
-	num = atoi(argv[i]);
+	c = argv[i];
 {
-		if (isdigit(num))
+		if (isdigit(c))
 		add += num;
 		else if (argc == 1)
 		printf("0\n");
