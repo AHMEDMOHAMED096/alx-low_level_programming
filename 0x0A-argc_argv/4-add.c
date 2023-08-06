@@ -30,7 +30,7 @@ while (*j != '\0')
 		else
 		add += atoi(argv[i]);
 	}
-}
 	printf("%d\n", add);
+}
 	return (0);
 }
