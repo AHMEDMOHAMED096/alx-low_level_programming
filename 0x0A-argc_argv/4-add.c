@@ -17,17 +17,15 @@ int main(int argc, char *argv[])
 	while (j > '\0')
 	{
 	j = argv[i];
+		for (i = 1; i < argc; i++)
+		{
 		if (*j < '0' || *j > '9')
 		{
 		printf("Error\n");
 		return (1);
 		}
-		for (i = 1; i < argc; i++)
-		{
 		else if (argc == 1)
-		{
 		printf("0\n");
-		}
 
 		else
 		add += atoi(argv[i]);
