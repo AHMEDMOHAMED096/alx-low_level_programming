@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
 	char *j;
 
 for (i = 1; i < argc; i++)
+	while (*j != '\0')
 {
 	j = argv[i];
-	while (*j != '\0')
 	{
 		if (*j < '0' || *j > '9')
 		{
@@ -26,9 +26,8 @@ for (i = 1; i < argc; i++)
 		}
 		else if (argc == 1)
 		printf("0\n");
-		else 
-		add += atoi(argv[i]);
 	}
+		add += atoi(argv[i]);
 }
 	printf("%d\n", add);
 
