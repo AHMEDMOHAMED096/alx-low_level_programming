@@ -12,27 +12,24 @@
 
 int main(int argc, char *argv[])
 {
-	int add = 0;
-	char *c;
+	int add = 0 , i, j;
+	char *arg;
 
-for (c = argv[argc]; *c; c++)
+for (i = 1; i < argc; i++)
 {
-	while (*c != '\0')
+	arg = argv[i];
+	for (j = 0; arg[j] != '\0'; j++)
 	{
-		if (argc == 1)
+		if(!isdigit(arg[j]))
 		{
-		printf("0\n");
-		}
-		else if (*c < '0' || *c > '9')
-		{
-		printf("Error\n");
-		return (1);
-		}
-		else
-		{
-		add += atoi(argv[argc]);
+			printf("Error\n");
+			return (1);
 		}
 	}
+			if (argc == 1)
+			printf("0\n");
+			else
+			add += atoi(argv[argc]);
 }
 	printf("%d\n", add);
 
