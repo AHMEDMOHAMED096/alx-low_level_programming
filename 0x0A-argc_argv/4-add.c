@@ -10,14 +10,14 @@
  * Return: always 0
  */
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i, add = 0;
 
 for (i = 1; i < argc; i++)
 {
 	char *c;
-	c = &argv[i];
+	*c = argv[i];
 	while (*c != '\0')
 	{
 		if (*c < '0' || *c > '9')
