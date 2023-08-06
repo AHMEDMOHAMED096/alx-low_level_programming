@@ -27,7 +27,6 @@ for (i = 1; i < argc; i++)
 		}
 		else if (argc == 1)
 		printf("0\n");
-		else
 	}
 		add += atoi(argv[i]);
 }
