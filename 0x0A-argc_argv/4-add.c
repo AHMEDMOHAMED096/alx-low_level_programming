@@ -20,7 +20,7 @@ printf("0\n");
 for (i = 1; i < argc; i++)
 {
 		j = argv[i];
-		while (*j != '\0')
+		while (argv[i] != '\0')
 		{
 		if (*j < '0' || *j > '9')
 		{
