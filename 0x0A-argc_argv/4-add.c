@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	int add = 0 , i, j;
+	int add = 0, i, j;
 	char *arg;
 
 for (i = 1; i < argc; i++)
@@ -20,7 +20,7 @@ for (i = 1; i < argc; i++)
 	arg = argv[i];
 	for (j = 0; arg[j] != '\0'; j++)
 	{
-		if(!isdigit(arg[j]))
+		if (!isdigit(arg[j]))
 		{
 			printf("Error\n");
 			return (1);
