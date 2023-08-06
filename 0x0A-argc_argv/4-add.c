@@ -21,14 +21,18 @@ for (i = 1; i < argc; i++)
 	{
 	c = (argv[i]);
 		if (argc == 1)
+		{
 		printf("0\n");
+		}
 		else if (*c < '0' || *c > '9')
 		{
 		printf("Error\n");
 		return (1);
 		}
 		else
+		{
 		add += atoi(argv[i]);
+		}
 	}
 }
 	printf("%d\n", add);
