@@ -7,11 +7,11 @@
 */
 char *_strdup(char *str)
 {
-	char *target = malloc(sizeof(str));
+	char *target = malloc(6 * sizeof(char));
 
 	if (target == NULL)
 	return (0);
 	target = _strdup(str);
-	return (0);
+	return (target);
 	free(target);
 }
