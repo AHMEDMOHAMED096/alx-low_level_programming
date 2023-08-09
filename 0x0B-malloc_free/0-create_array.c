@@ -14,7 +14,7 @@ char *arr = malloc(size);
 arr[size] = c;
 if (arr == 0 || size == 0)
 return (0);
-while (arr < size)
+while (*arr < size)
 return (arr);
 }
 
