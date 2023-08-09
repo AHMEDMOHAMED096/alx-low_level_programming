@@ -1,25 +1,22 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /*
-* create_array: a function pointer which points to char variable
-* @buffer: the address of memory to print
+* create_array:  creates an array of chars, 
+and initializes it with a specific char.
+* @c: the char to be initialized
 * @size: the size of the memory to print
 * Return: return Null if it fails
 */
 
 char *create_array(unsigned int size, char c)
 {
-unsigned int n;
-
-create_array = (char *)malloc(n * sizeof(char));
+int n;
+create_array = (char*)malloc(n * sizeof(char));
 if (create_array == 0)
-{
-printf("failed to allocate memory\n");
-exit(0);
-}
-free(create_array);
+return (0);
+create_array[size] = c;
+return (create_array);
+
 }
 
 
