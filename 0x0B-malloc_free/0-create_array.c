@@ -14,9 +14,9 @@ unsigned int i;
 char *arr = malloc(size * sizeof(char));
 if (arr == 0 || size == 0)
 return (0);
-for ( i = 0; i < size; i++)
+for (i = 0; i < size; i++)
 {
-    arr[i] = c;
+arr[i] = c;
 }
 return (arr);
 }
