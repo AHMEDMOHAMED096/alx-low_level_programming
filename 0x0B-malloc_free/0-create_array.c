@@ -11,10 +11,10 @@
 char *create_array(unsigned int size, char c)
 {
 char *arr = malloc(size);
+arr[size] = c;
 if (arr == 0 || size == 0)
 return (0);
-else
-arr[size] = c;
+while (arr < size)
 return (arr);
 
 }
