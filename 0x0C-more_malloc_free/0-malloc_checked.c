@@ -8,8 +8,8 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *fun = (void*)malloc(b);
+	int *fun = (void*)malloc(b);
 
 	if (fun == NULL)
-	return *(void*);
+	return (98);
 }
