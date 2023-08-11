@@ -8,7 +8,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *malloc_checked = (void*)malloc(b);
+	void *malloc_checked = (void*)malloc(b * sizeof *malloc_checked);
 
 	if (malloc_checked == NULL)
 	free (malloc_checked);
