@@ -11,5 +11,6 @@ void *malloc_checked(unsigned int b)
 	void *fun = (void*)malloc(b);
 
 	if (fun == NULL)
+	free (fun);
 	exit (98);
 }
