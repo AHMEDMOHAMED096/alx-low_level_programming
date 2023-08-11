@@ -9,6 +9,7 @@
 void *malloc_checked(unsigned int b)
 {
 	void *fun = malloc(b);
+
 	if (fun == NULL)
 	return (98);
 }
