@@ -8,9 +8,9 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *fun = (void*)malloc(b);
+	void *malloc_checked = (void*)malloc(b);
 
-	if (fun == NULL)
-	free (fun);
+	if (malloc_checked == NULL)
+	free (malloc_checked);
 	exit (98);
 }
