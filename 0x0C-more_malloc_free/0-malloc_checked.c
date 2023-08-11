@@ -8,7 +8,8 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *fun = malloc(sizeof *(void*) * b);
+	unsigned int b;
+	void *fun = malloc(b * sizeof *(void*));
 
 	if (fun == NULL)
 	free (fun);
