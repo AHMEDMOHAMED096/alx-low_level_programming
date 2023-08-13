@@ -14,6 +14,7 @@ char *_strdup(char *str)
 	else
 	{
 	target = _strdup (str);
-	return (0);
+	free(target);
 	}
+	return (0);
 }
