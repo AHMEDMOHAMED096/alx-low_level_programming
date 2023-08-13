@@ -13,7 +13,7 @@ char *_strdup(char *str)
 	return (0);
 	else
 	{
-	target = _strdup (str);
+	char *ptr = _strdup (str);
 	return (0);
 	}
 }
