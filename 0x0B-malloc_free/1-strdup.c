@@ -13,6 +13,7 @@ char *_strdup(char *str)
 	return (0);
 	else
 	{
+	printf("%s\n", target);
 	target = strdup (str);
 	return (0);
 	}
