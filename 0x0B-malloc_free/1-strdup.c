@@ -8,7 +8,7 @@
 */
 char *_strdup(char *str)
 {
-	char *target = malloc(strlen(str)+ 1);
+	char *target = malloc(sizeof(*str));
 	if (target == NULL)
 	return (0);
 	else
