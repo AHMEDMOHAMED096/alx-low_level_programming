@@ -8,12 +8,12 @@
 */
 char *_strdup(char *str)
 {
-	char *target = (char *str)malloc(sizeof(char));
+	char *target = malloc(sizeof(str));
 	if (target == NULL)
-	return (0);
+	return (NULL);
 	else
 	{
-	target = strdup (str);
+	target = _strdup (str);
 	return (0);
 	}
 }
