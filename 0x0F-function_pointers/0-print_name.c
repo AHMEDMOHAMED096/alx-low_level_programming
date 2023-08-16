@@ -2,19 +2,13 @@
 
 /**
  * print_name - prints a name.
- * @f: pointer to function.
+ * @f: pointer to function prints a string
  * @name: name of the person.
  * Return: returns void
  */
 
 void print_name(char *name, void (*f)(char *))
 {
-	int i = 0;
-
-	while (name[i] != '\0')
-	{
-	f(*name[i]);
-	_putchar(*name[i]);
-	i++;
-	}
+	while (*name != '\0')
+	f(*name);
 }
