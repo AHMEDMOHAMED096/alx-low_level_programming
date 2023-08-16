@@ -9,7 +9,7 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	int i;
+	int i = 0;
 
 	while (name[i] != '\0')
 	{
