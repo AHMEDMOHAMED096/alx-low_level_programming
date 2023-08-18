@@ -18,8 +18,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 	const char *s = va_arg(args, char *);
 
-	printf("%s%s", (str != NULL) ? str : "(nil)",
-		(separator != NULL && i < n - 1) ? separator : "");
+	printf("%s%s", (str != NULL) ? str : "(nil)",(separator != NULL && i < n - 1) 
+			? separator : "");
 	}
 	printf("\n");
 	va_end(args);
