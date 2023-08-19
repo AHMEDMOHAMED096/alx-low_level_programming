@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	 		    }
 	 		    case 'd': 
 	 		    {
-	 		        itoa(va_arg( vl, int ), tmp, 10);
+	 		        int n = (va_arg( vl, int ), tmp);
 	 		        strcpy(&buff[j], tmp);
 	 		        j += strlen(tmp);
 		           break;
