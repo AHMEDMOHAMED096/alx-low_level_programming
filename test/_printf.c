@@ -47,9 +47,6 @@ int _printf(const char *format, ...)
 				_putchar(*format);
 				count++;
 				break;
-
-				case '%':
-				_putchar('%');
 			}
 		}
 		else
