@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 			{
 				case 'd':
 				{
-				int i = va_arg(ap, format);
+				int i = va_arg(ap, int);
 				_putchar(i);
 				count++;
 				break;
@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 		putchar(*format);
 		count++;
 		}
-		foramt++;
+		format++;
 	}
 	va_end(ap);
 	return (count);
