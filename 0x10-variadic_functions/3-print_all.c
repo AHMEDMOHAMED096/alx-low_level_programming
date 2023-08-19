@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 	{
 		if (*p == 'c')
 		{
-		c = va_arg(args, int);
+		c = (char)va_arg(args, int);
 		printf("%c", c);
 		}
 
@@ -34,7 +34,7 @@ void print_all(const char * const format, ...)
 
 		else if (*p == 'f')
 		{
-		f = va_arg(args, double);
+		f = (float)va_arg(args, double);
 		printf("%f", f);
 		}
 
