@@ -3,60 +3,51 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
+	va_list vl;
+	int i = 0, j=0;
 
-	va_list ap;
+	char buff[100]={0}, tmp[20];
 
-	va_start(ap, format);
+	va_start( vl, format ); 
 
-	while (*format)
+	while (format && format[i])
 	{
-		if (*format =='%')
+		if(format[i] == '%')
 		{
-			format++;
-
-			switch(*format)
-			{
-				case 'd':
-				{
-				int i = va_arg(ap, int);
-				_putchar(i);
-				count++;
-				break;
-				}
-				case 'c':
-				{
-				int c = va_arg(ap, int);
-				_putchar(c);
-				count++;
-				break;
-				}
-				case 's':
-				{
-				char *s = va_arg(ap, char *);
-				while (*s != '\0')
-				{
-				_putchar(*s);
-				s++;
-				count++;
-				}
-				break;
-				}
-
-				default:
-				_putchar(*format);
-				count++;
-				break;
-			}
-		}
-		else
-		{
-		putchar(*format);
-		count++;
-		}
-		format++;
-	}
-	va_end(ap);
-	return (count);
-
-}
+ 		    i++;
+ 		    switch (format[i]) 
+ 		    {
+	 		    case 'c': 
+	 		    {
+	 		        buff[j] = (char)va_arg( vl, int );
+	 		        j++;
+	 		        break;
+	 		    }
+	 		    case 'd': 
+	 		    {
+	 		        itoa(va_arg( vl, int ), tmp, 10);
+	 		        strcpy(&buff[j], tmp);
+	 		        j += strlen(tmp);
+		           break;
+		        }
+		        case 'x': 
+		        {
+		           itoa(va_arg( vl, int ), tmp, 16);
+		           strcpy(&buff[j], tmp);
+		           j += strlen(tmp);
+		           break;
+		        }
+        	}
+     	} 
+     	else 
+	    {
+	       	buff[j] =format[i];
+	       	j++;
+	    }
+	    i++;
+	} 
+    write(1, j, buff); 
+    va_end(vl);
+    return j;
+ }
+ 
