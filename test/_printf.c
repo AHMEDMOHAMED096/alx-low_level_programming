@@ -43,7 +43,7 @@ int _printf(const char *format, ...) {
           count += strlen(buf);
           break;
         }
-		
+
         }
         default:
           count++;
@@ -54,8 +54,7 @@ int _printf(const char *format, ...) {
       count++;
     }
     format++;
-  }
 
   va_end(args);
   return count;
-}
+  }
