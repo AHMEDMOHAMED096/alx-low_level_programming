@@ -27,9 +27,9 @@ int _printf(const char *format, ...)
 					{
 					int i = va_arg(ap, int);
 					_putchar(i);
-					count++;
-					break;
 					}
+				count++;
+				break;
 				}
 				case 'c':
 				{
