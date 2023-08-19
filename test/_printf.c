@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 	    }
 	    i++;
 	} 
-    write(1, j, buff); 
+    write(1, format, buff[j]); 
     va_end(vl);
     return j;
  }
