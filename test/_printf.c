@@ -1,69 +1,99 @@
 #include "main.h"
 
-int _printf(const char *format, ...)
-{
-	int count = 0;
+int _printf(const char *format, ...) {
+  int count = 0;
+  va_list args;
+  va_start(args, format);
 
-	va_list ap;
+  while (*format) {
+    if (*format == '%') {
+      format++;
+      switch (*format) {
+        case 'c': {
+          char c = va_arg(args, int);
+          putchar(c);
+          count++;
+          break;
+        }
+        case 's': {
+          char *s = va_arg(args, char *);
+          int len = strlen(s);
+          write(1, s, len);
+          count += len;
+          break;
+        }
+        case '%': {
+          putchar('%');
+          count++;
+          break;
+        }
+        case 'd': {
+          int i = va_arg(args, int);
+          char buf[32];
+          sprintf(buf, "%d", i);
+          write(1, buf, strlen(buf));
+          count += strlen(buf);
+          break;
+        }
+        case 'i': {
+          int i = va_arg(args, int);
+          char buf[32];
+          sprintf(buf, "%i", i);
+          write(1, buf, strlen(buf));
+          count += strlen(buf);
+          break;
+        }
+        case 'b': {
+          unsigned int n = va_arg(args, unsigned int);
+          char buf[32];
+          sprintf(buf, "%b", n);
+          write(1, buf, strlen(buf));
+          count += strlen(buf);
+          break;
+        }
+        case 'u': {
+          unsigned int n = va_arg(args, unsigned int);
+          char buf[32];
+          sprintf(buf, "%u", n);
+          write(1, buf, strlen(buf));
+          count += strlen(buf);
+          break;
+        }
+        case 'o': {
+          unsigned int n = va_arg(args, unsigned int);
+          char buf[32];
+          sprintf(buf, "%o", n);
+          write(1, buf, strlen(buf));
+          count += strlen(buf);
+          break;
+        }
+        case 'x': {
+          unsigned int n = va_arg(args, unsigned int);
+          char buf[32];
+          sprintf(buf, "%x", n);
+          write(1, buf, strlen(buf));
+          count += strlen(buf);
+          break;
+        }
+        case 'X': {
+          unsigned int n = va_arg(args, unsigned int);
+          char buf[32];
+          sprintf(buf, "%X", n);
+          write(1, buf, strlen(buf));
+          count += strlen(buf);
+          break;
+        }
+        default:
+          count++;
+          break;
+      }
+    } else {
+      putchar(*format);
+      count++;
+    }
+    format++;
+  }
 
-	va_start(ap, format);
-
-	while (*format)
-	{
-		if (*format =='%')
-		{
-			format++;
-
-			switch(*format)
-			{
-				case '%':
-				_putchar('%');
-				count++;
-				break;
-
-				case 'd':
-				{
-				if ('d' || 'i' == *format)
-					{
-					int i = va_arg(ap, int);
-					_putchar(i);
-					}
-				count++;
-				break;
-				}
-				case 'c':
-				{
-				int c = va_arg(ap, int);
-				_putchar(c);
-				count++;
-				break;
-				}
-				case 's':
-				{
-				char *s = va_arg(ap, char *);
-					while (*s)
-					{
-					_putchar(*s);
-					s++;
-					count++;
-					}
-					break;
-				}
-
-				default:
-				_putchar(*format);
-				count++;
-				break;
-			}
-		}
-		else
-		{
-		putchar(*format);
-		count++;
-		}
-		format++;
-	}
-	va_end(ap);
-	return (count);
-
+  va_end(args);
+  return count;
 }
