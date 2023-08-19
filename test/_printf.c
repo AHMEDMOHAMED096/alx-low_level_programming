@@ -9,11 +9,11 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 
-	while (*format != '\0')
+	while (*format)
 	{
-		if (*format == '%')
+		if (*format !='%')
 		{
-			format++;
+			* ++format;
 
 			switch(*format)
 			{
@@ -47,6 +47,9 @@ int _printf(const char *format, ...)
 				_putchar(*format);
 				count++;
 				break;
+
+				case '%':
+				_putchar('%');
 			}
 		}
 		else
