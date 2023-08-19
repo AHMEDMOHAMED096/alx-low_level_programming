@@ -1,71 +1,69 @@
 #include "main.h"
 
-int _printf(const char *format, ...) 
+int _printf(const char *format, ...)
 {
-  int count = 0;
-  va_list args;
-  va_start(args, format);
+	int count = 0;
 
-  while (*format) 
-  {
-    if (*format == '%') 
+	va_list ap;
+
+	va_start(ap, format);
+
+	while (*format)
 	{
-      format++;
-      switch (*format) 
-	  {
-        case 'c': 
+		if (*format =='%')
 		{
-          char c = va_arg(args, int);
-          putchar(c);
-          count++;
-          break;
-        }
-        case 's': 
-		{
-          char *s = va_arg(args, char *);
-          int len = strlen(s);
-          write(1, s, len);
-          count += len;
-          break;
-        }
-        case '%': 
-		{
-          putchar('%');
-          count++;
-          break;
-        }
-        case 'd': 
-		{
-          int i = va_arg(args, int);
-          char buf[32];
-          sprintf(buf, "%d", i);
-          write(1, buf, strlen(buf));
-          count += strlen(buf);
-          break;
-        }
-        case 'i': 
-		{
-          int i = va_arg(args, int);
-          char buf[32];
-          sprintf(buf, "%i", i);
-          write(1, buf, strlen(buf));
-          count += strlen(buf);
-          break;
-        }
+			format++;
 
-        default:
-          count++;
-          break;
-	  }
+			switch(*format)
+			{
+				case '%':
+				_putchar('%');
+				count++;
+				break;
+
+				case 'd':
+				{
+				if ('d' || 'i' == *format)
+					{
+					int i = va_arg(ap, int);
+					_putchar(i);
+					}
+				count++;
+				break;
+				}
+				case 'c':
+				{
+				int c = va_arg(ap, int);
+				_putchar(c);
+				count++;
+				break;
+				}
+				case 's':
+				{
+				char *s = va_arg(ap, char *);
+					while (*s)
+					{
+					_putchar(*s);
+					s++;
+					count++;
+					}
+					break;
+				}
+
+				default:
+				_putchar(*format);
+				count++;
+				break;
+			}
+		}
+		else
+		{
+		putchar(*format);
+		count++;
+		}
+		format++;
 	}
-	 else 
-	{
-      putchar(*format);
-      count++;
-    }
-  }
-    format++;
+	va_end(ap);
+	return (count);
 
-  va_end(args);
-  return count;
 }
