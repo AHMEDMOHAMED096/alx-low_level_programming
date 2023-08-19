@@ -46,7 +46,6 @@ int _printf(const char *format, ...) {
         case 'b': {
           unsigned int n = va_arg(args, unsigned int);
           char buf[32];
-          sprintf(buf, "%b", n);
           write(1, buf, strlen(buf));
           count += strlen(buf);
           break;
@@ -54,7 +53,6 @@ int _printf(const char *format, ...) {
         case 'u': {
           unsigned int n = va_arg(args, unsigned int);
           char buf[32];
-          sprintf(buf, "%u", n);
           write(1, buf, strlen(buf));
           count += strlen(buf);
           break;
@@ -62,7 +60,6 @@ int _printf(const char *format, ...) {
         case 'o': {
           unsigned int n = va_arg(args, unsigned int);
           char buf[32];
-          sprintf(buf, "%o", n);
           write(1, buf, strlen(buf));
           count += strlen(buf);
           break;
@@ -70,7 +67,6 @@ int _printf(const char *format, ...) {
         case 'x': {
           unsigned int n = va_arg(args, unsigned int);
           char buf[32];
-          sprintf(buf, "%x", n);
           write(1, buf, strlen(buf));
           count += strlen(buf);
           break;
@@ -78,7 +74,6 @@ int _printf(const char *format, ...) {
         case 'X': {
           unsigned int n = va_arg(args, unsigned int);
           char buf[32];
-          sprintf(buf, "%X", n);
           write(1, buf, strlen(buf));
           count += strlen(buf);
           break;
