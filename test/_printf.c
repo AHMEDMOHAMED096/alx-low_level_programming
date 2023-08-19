@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 			{
 				case 'd':
 				{
-				int i = va_arg(ap, foramt);
+				int i = va_arg(ap, format);
 				_putchar(i);
 				count++;
 				break;
@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 				}
 
 				default:
-				_putchar(*foramt);
+				_putchar(*format);
 				count++;
 				break;
 			}
