@@ -43,40 +43,7 @@ int _printf(const char *format, ...) {
           count += strlen(buf);
           break;
         }
-        case 'b': {
-          unsigned int n = va_arg(args, unsigned int);
-          char buf[32];
-          write(1, buf, strlen(buf));
-          count += strlen(buf);
-          break;
-        }
-        case 'u': {
-          unsigned int n = va_arg(args, unsigned int);
-          char buf[32];
-          write(1, buf, strlen(buf));
-          count += strlen(buf);
-          break;
-        }
-        case 'o': {
-          unsigned int n = va_arg(args, unsigned int);
-          char buf[32];
-          write(1, buf, strlen(buf));
-          count += strlen(buf);
-          break;
-        }
-        case 'x': {
-          unsigned int n = va_arg(args, unsigned int);
-          char buf[32];
-          write(1, buf, strlen(buf));
-          count += strlen(buf);
-          break;
-        }
-        case 'X': {
-          unsigned int n = va_arg(args, unsigned int);
-          char buf[32];
-          write(1, buf, strlen(buf));
-          count += strlen(buf);
-          break;
+		
         }
         default:
           count++;
