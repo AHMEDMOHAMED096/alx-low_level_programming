@@ -27,6 +27,7 @@ int print_str(char *str)
 
 int print_digit(long n, int base)
 {
+	int n = 0;
     int count = 0;
     char *symbols;
     if (n < 0)
