@@ -32,8 +32,6 @@ int print_digit(long n, int base)
     
 }
 
-
-
 int print_format(char spec, va_list ap)
 {
     int count = 0;
@@ -53,7 +51,10 @@ int print_format(char spec, va_list ap)
     else if (spec == 'o')
     count += print_digit((long)(va_arg(ap, unsigned int)), 8);
     else if (spec == 'p')
-    count += print_digit((long)(va_arg(ap, void *)), 16);
+    {
+    count += write(1, "0x", 2);
+    count += print_digit((long)(va_arg(ap, void *)));
+    }
     else if (spec == '%')
     count += _putchar('%');
     else if (spec == 'r')
