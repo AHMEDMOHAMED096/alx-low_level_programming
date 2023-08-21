@@ -75,7 +75,7 @@ int _printf(const char *format, ...)
         count += _putchar(va_arg(ap, int));
         }
         else if (*format == '%')
-        count += print_format(*(format++), ap);
+        count += print_format(*(++format), ap);
 		else
         count += write(1, format, 1);
         ++format;
