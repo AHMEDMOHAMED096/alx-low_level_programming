@@ -63,23 +63,22 @@ int print_format(char spec, va_list ap)
 
 int _printf(const char *format, ...)
 {
-    const char *validSpecifiers = "csidxXupo";
+    const char *validSpecifiers = "csidxXupo%";
     va_list ap;
     int count;
     va_start(ap, format);
     count = 0;
     while (*format != '\0')
     {
-        if (*format == '%' && *(++format) != *validSpecifiers)
+        if (*format == '%' && *(format + 1) == *validSpecifiers)
+        count += print_format(*(++format), ap);
+		else
         {
         count += _putchar('%');
         count += _putchar(va_arg(ap, int));
-        }
-        else if (*format == '%')
-        count += print_format(*(++format), ap);
-		else
         count += write(1, format, 1);
         ++format;
+        }
     }
     va_end(ap);
     return count;
