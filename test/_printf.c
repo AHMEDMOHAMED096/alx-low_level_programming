@@ -66,6 +66,8 @@ int print_format(char spec, va_list ap)
     count += print_digit((long)(va_arg(ap, void *)), 16);
     else if (spec == '%')
     count += print_char('%');
+    else if (spec == 'r')
+    count += print_char('r');
     else 
     count += write(1, &spec, 1);
     return count;
