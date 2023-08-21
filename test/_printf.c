@@ -54,7 +54,7 @@ int print_format(char spec, va_list ap)
     count += print_digit((long)(va_arg(ap, void *)), 16);
     else if (spec == '%')
     count += _putchar('%');
-    else if (spec == NULL)
+    else if (spec == "NULL")
     {
     count += _putchar('%');
     count += _putchar(va_arg(ap, int));
