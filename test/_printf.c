@@ -35,7 +35,7 @@ int print_digit(long n, int base)
         return print_digit(n * - 1, base) + 1;
     }
     else if (n < base)
-    return print_char(symbols[n]);
+    return print_char(symbols[n] + 1);
     else
     {
         count = print_digit(n / base , base);
