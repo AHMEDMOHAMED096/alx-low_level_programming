@@ -54,6 +54,11 @@ int print_format(char spec, va_list ap)
     count += print_digit((long)(va_arg(ap, void *)), 16);
     else if (spec == '%')
     count += _putchar('%');
+    else if (spec == 'r')
+    count += _putchar('%');
+    count += _putchar('r');
+    else if (spec == ' ')
+    return (-1);
     else 
     count += write(1, &spec, 1);
     return count;
@@ -63,20 +68,16 @@ int print_format(char spec, va_list ap)
 
 int _printf(const char *format, ...)
 {
-    char validSpecifier[] = "csidxXupo%";
-    int i = 0;
     va_list ap;
     int count;
     va_start(ap, format);
     count = 0;
     while (*format != '\0')
     {
-        if (*format == '%' && *(format + 1) == validSpecifier[i])
+        if (*format == '%')
         count += print_format(*(++format), ap);
 		else
         {
-        count += _putchar('%');
-        count += _putchar(va_arg(ap, int));
         count += write(1, format, 1);
         ++format;
         }
