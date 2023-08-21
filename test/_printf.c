@@ -69,7 +69,7 @@ int _printf(const char *format, ...)
     count = 0;
     while (*format != '\0')
     {
-        if (*format == '%' && *(format + 1) == NULL)
+        if (*format == '%' && *(format + 1) == 0)
         {
         count += _putchar('%');
         count += _putchar(va_arg(ap, int));
