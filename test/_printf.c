@@ -67,18 +67,19 @@ int _printf(const char *format, ...)
     int count;
     va_start(ap, format);
     count = 0;
-    while (*format != '\0')
+    int i = 0;
+    while (format[i] != '\0')
     {
-        if (*format == '%')
-        count += print_format(*(++format), ap);
-        else if (*format == NULL)
+        if (format[i] == '%')
+        count += print_format(*(++format[i]), ap);
+        else if (format[i] == NULL)
         {
         count += _putchar('%');
         count += _putchar(va_arg(ap, int));
         }
 		else
-        count += write(1, format, 1);
-        ++format;
+        count += write(1, format[i], 1);
+        ++format[i];
     }
     va_end(ap);
     return count;
