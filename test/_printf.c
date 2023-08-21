@@ -13,21 +13,23 @@ int print_str(char *str)
 }
 
 
-int print_digit(long n, int base)
+int print_digit(long n, int base, char caseSpecifier)
 {
     int count = 0;
-	char symbols[] = "0123456789abcdef";
+	char symbolslower[] = "0123456789abcdef";
+    char symbolsUpper[] = "0123456789ABCDEF";
+    char* symbols = (caseSpecifier == 'x') ? symbolsLower : symbolsUpper;
     if (n < 0)
     {
         write(1, "-", 1);
-        return print_digit(n * -1, base) + 1;
+        return print_digit(n * -1, base, caseSpecifier) + 1;
     }
     else if (n < base)
     return _putchar(symbols[n]) + 1;
     else
     {
-        count = print_digit(n / base , base);
-        return count + print_digit(n % base, base);
+        count = print_digit(n / base , base, caseSpecifier);
+        return count + print_digit(n % base, base, caseSpecifier);
     }
     
 }
@@ -45,7 +47,9 @@ int print_format(char spec, va_list ap)
     else if (spec == 'i' || spec == 'd')
     count += print_digit((long)(va_arg(ap, int)), 10);
     else if(spec == 'x')
-    count += print_digit((long)(va_arg(ap, unsigned int)), 16);
+    count += print_digit((long)(va_arg(ap, unsigned int)), 16, 'x');
+    else if(spec == 'X')
+    count += print_digit((long)(va_arg(ap, unsigned int)), 16, 'X');
 	else if (spec == 'u')
     count += print_digit((long)(va_arg(ap, unsigned int)), 10);
     else if (spec == 'o')
