@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
     int count;
     va_start(ap, format);
     count = 0;
-    const char* validSpecifiers = "csidxXupo%";
+    char* validSpecifiers = "csidxXupo%";
     while (*format != '\0')
     {
         if (*format == '%' && *(format + 1) != *validSpecifiers)
