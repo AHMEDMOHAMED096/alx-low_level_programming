@@ -67,7 +67,10 @@ int print_format(char spec, va_list ap)
     else if (spec == '%')
     count += print_char('%');
     else if (spec == 'r')
+    {
+    count += print_char('%');
     count += print_char('r');
+    }
     else 
     count += write(1, &spec, 1);
     return count;
