@@ -71,7 +71,7 @@ int _printf(const char *format, ...)
     int i = 0;
     while (*format != '\0')
     {
-        if (*format == '%' && *(format + 1) == validSpecifiers[i])
+        if (*format == '%' && *(format + 1) == validSpecifier[i])
         count += print_format(*(++format), ap);
 		else
         {
