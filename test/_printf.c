@@ -57,7 +57,7 @@ int print_format(char spec, va_list ap)
     else if (spec == NULL)
     {
     count += _putchar('%');
-    count += _putchar(*format);
+    count += _putchar(va_arg(ap, int));
     }
     else 
     count += write(1, &spec, 1);
