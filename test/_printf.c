@@ -77,10 +77,8 @@ int _printf(const char *format, ...)
         if (*format == '%')
         count += print_format(*(++format), ap);
 		else
-        {
         count += write(1, format, 1);
         ++format;
-        }
     }
     va_end(ap);
     return count;
