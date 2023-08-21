@@ -38,6 +38,7 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+    _printf("i am %3f", "27.5");
     return (0);
 
    
