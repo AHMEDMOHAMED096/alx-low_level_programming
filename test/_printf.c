@@ -53,7 +53,7 @@ int print_format(char spec, va_list ap)
     else if (spec == 'p')
     {
     count += write(1, "0x", 2);
-    count += print_digit((long)(va_arg(ap, void *)));
+    count += print_digit((long)(va_arg(ap, void *)), 16);
     }
     else if (spec == '%')
     count += _putchar('%');
