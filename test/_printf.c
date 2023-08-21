@@ -64,11 +64,11 @@ int print_format(char spec, va_list ap)
 int _printf(const char *format, ...)
 {
     char validSpecifier[] = "csidxXupo%";
+    int i = 0;
     va_list ap;
     int count;
     va_start(ap, format);
     count = 0;
-    int i = 0;
     while (*format != '\0')
     {
         if (*format == '%' && *(format + 1) == validSpecifier[i])
