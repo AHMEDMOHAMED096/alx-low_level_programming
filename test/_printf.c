@@ -54,6 +54,11 @@ int print_format(char spec, va_list ap)
     count += print_digit((long)(va_arg(ap, void *)), 16);
     else if (spec == '%')
     count += _putchar('%');
+    else if (format == NULL)
+    {
+    count += _putchar('%');
+    count += _putchar(va_arg(ap, int));
+    }
     else 
     count += write(1, &spec, 1);
     return count;
@@ -69,12 +74,7 @@ int _printf(const char *format, ...)
     count = 0;
     while (*format != '\0')
     {
-        if (format == NULL)
-        {
-        count += _putchar('%');
-        count += _putchar(va_arg(ap, int));
-        }
-        else if (*format == '%')
+        if (*format == '%')
         count += print_format(*(++format), ap);
 		else
         count += write(1, format, 1);
