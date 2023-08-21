@@ -54,10 +54,10 @@ int print_format(char spec, va_list ap)
     count += print_digit((long)(va_arg(ap, void *)), 16);
     else if (spec == '%')
     count += _putchar('%');
-    else if (spec == 'r')
+    else if (spec == NULL)
     {
     count += _putchar('%');
-    count += _putchar('r');
+    count += _putchar(*format);
     }
     else 
     count += write(1, &spec, 1);
