@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
     count = 0;
     while (*format != '\0')
     {
-        if (*format == '%' && *(format + 1) != *validSpecifiers)
+        if (*format == '%' && *(++format) != *validSpecifiers)
         {
         count += _putchar('%');
         count += _putchar(va_arg(ap, int));
