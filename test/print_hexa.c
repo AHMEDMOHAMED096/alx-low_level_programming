@@ -3,7 +3,7 @@
 int print_hexa(long n, int base, char caseSpecifier)
 {
     int count = 0;
-	char symbolslower[] = "0123456789abcdef";
+	char symbolsLower[] = "0123456789abcdef";
     char symbolsUpper[] = "0123456789ABCDEF";
     char* symbols = (caseSpecifier == 'x') ? symbolsLower : symbolsUpper;
     if (n < 0)
