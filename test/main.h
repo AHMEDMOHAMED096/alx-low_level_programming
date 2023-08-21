@@ -13,5 +13,8 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_hexa(long n, int base, char caseSpecifier);
+int print_digit(long n, int base);
+int print_str(char *str);
+
 #endif /* MAIN_H */
 
