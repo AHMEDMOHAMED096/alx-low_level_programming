@@ -16,6 +16,7 @@ int print_str(char *str)
 int print_digit(long n, int base)
 {
     int count = 0;
+    char symbols[] = "0123456789abcdef";
     if (n < 0)
     {
         write(1, "-", 1);
