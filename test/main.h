@@ -12,6 +12,6 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-
+int print_hexa(long n, int base, char caseSpecifier);
 #endif /* MAIN_H */
 
