@@ -1,7 +1,6 @@
 #include "main.h"
 /**
 * print_digit - prints a given number according to its base
-* @count: detects number of characters to be printed on stdout
 * @n: a given number by variadic arguments list
 * @base: base of the number
 * Return: return number of printed characters
