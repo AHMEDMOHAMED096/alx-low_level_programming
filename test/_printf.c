@@ -1,9 +1,10 @@
 #include "main.h"
 /**
 * _printf - a custom function alternative to printf
-* print_format - checks for the format specifier after '%'
+* @print_format: checks for the format specifier after '%'
 * @count: detects number of characters to be printed on stdout
 * @ap: list of variadic arguments
+* @spec: the format specifier to be checked by @print_format
 * return: return @count
 */
 
