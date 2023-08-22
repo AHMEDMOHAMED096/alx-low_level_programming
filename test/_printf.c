@@ -23,6 +23,8 @@ int print_format(char spec, va_list ap)
     count += write(1, "0x", 2);
     count += print_digit((long)(va_arg(ap, void *)), 16);
     }
+    else if (spec == 'b')
+    count += print_digit((long)(va_arg(ap, void *)), 2);
     else if (spec == '%')
     count += _putchar('%');
     else if (spec == 'r')
