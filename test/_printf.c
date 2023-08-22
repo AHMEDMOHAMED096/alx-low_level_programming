@@ -27,67 +27,39 @@ int print_format(char spec, va_list ap)
     count += print_digit((long)(va_arg(ap, void *)), 2);
     else if (spec == '%')
     count += _putchar('%');
-    /*else if (spec == 'r')
-    {
-    count += _putchar('%');
-    count += _putchar('r');
-    }*/
     else 
     count += write(1, &spec, 1);
     return count;
 }
 
 
-
 int _printf(const char *format, ...)
 {
     va_list ap;
-    int count = 0;
-    int i = 0;
-    const char validspec[] = "diouxXfsbpc%";
+    int count;
+    int i;
+    const char validspec[]= "diouxXfsbpc%";
     va_start(ap, format);
-    
+    count = 0;
+    i = 0;
     while (format[i] != '\0')
     {
         if (format[i] == '%')
         {
-            if (format[i + 1] != '\0')
+            if (format[i + 1] != sizeof(validspec) - 1)
             {
-                int valid_spec = 0;
-                unsigned int j = 0;
-                for (j = 0; j < sizeof(validspec) - 1; j++)
-                {
-                    if (format[i + 1] == validspec[j])
-                    {
-                        valid_spec = 1;
-                        break;
-                    }
-                }
-                
-                if (valid_spec)
-                {
-                    count += print_format(format[i + 1], ap);
-                    i++;
-                }
-                else
-                {
-                    count += write(1, &format[i], 1); 
-                    count += write(1, &format[i + 1], 1); 
-                }
+                count += write(1, &format[i], 1);
+                count += write(1, &format[i + 1], 1);
             }
-            else
-            {
-                count += write(1, &format[i], 1); 
-            }
+        else
+        count += print_format((format[++i]), ap);
         }
         else
-        {
-            count += write(1, &format[i], 1);
-        }
+        count += write(1, format + i, 1);
         i++;
     }
-    
     va_end(ap);
     return count;
 }
+
 
