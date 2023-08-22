@@ -57,7 +57,6 @@ int _printf(const char *format, ...)
                         break;
                     }
                 }
-                
                 if (valid_spec)
                 {
                     count += print_format(format[i + 1], ap);
@@ -73,9 +72,8 @@ int _printf(const char *format, ...)
         count += write(1, &format[i], 1);
         i++;
     }
-    
     va_end(ap);
-    return count;
+    return (count);
 }
 
 
