@@ -3,6 +3,7 @@
 * _printf - a custom function alternative to printf
 * print_format - checks for the format specifier after '%'
 * @count: detects number of characters to be printed on stdout
+* @ap: list of variadic arguments
 * return: return @count
 */
 
