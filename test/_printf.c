@@ -49,14 +49,14 @@ int _printf(const char *format, ...)
     i = 0;
     while (format[i] != '\0')
     {
-        /*if (format[i] == '%' && format[i] == NULL)
-        {
-            count += _putchar('%');
-            count += _putchar(va_arg(ap, int));
-        }*/
         if (format[i] == '%')
+        {
+            if (format[i + 1] == -1)
+            count += write(1, &format[i], 2);
+        else
         count += print_format((format[++i]), ap);
-		else
+        }
+        else
         count += write(1, format + i, 1);
         i++;
     }
