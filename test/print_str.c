@@ -3,7 +3,7 @@
 * print_str - prints string to stdout
 * @count: detects number of characters to be printed on stdout
 * @str: the string to be printed
-* return: return int
+* Return: return number of printed characters
 */
 
 int print_str(char *str)

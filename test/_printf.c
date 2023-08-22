@@ -4,7 +4,7 @@
 * @count: detects number of characters to be printed on stdout
 * @ap: list of variadic arguments
 * *format: string of variadic arguments
-* return: return int
+* Return: return number of printed characters
 */
 
 

@@ -4,7 +4,7 @@
 * @count: detects number of characters to be printed on stdout
 * @ap: list of variadic arguments
 * @spec: the format specifier to be checked by @print_format
-* return: return int
+* Return: return number of printed characters
 */
 
 int print_format(char spec, va_list ap)
