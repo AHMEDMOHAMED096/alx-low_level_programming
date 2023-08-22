@@ -43,7 +43,7 @@ int main(void)
     _printf("%%\n", num);
     printf("%%\n", num);
     _printf("% \n", num2);
-    printf("%d\n", num2);
+    printf("% \n", num2);
 
     return (0);
 
