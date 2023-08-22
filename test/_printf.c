@@ -32,6 +32,8 @@ int print_format(char spec, va_list ap)
     count += _putchar('%');
     count += _putchar('r');
     }
+    else if (spec == ' ');
+    return (-1);
     else 
     count += write(1, &spec, 1);
     return count;
