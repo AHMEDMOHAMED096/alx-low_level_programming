@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
             {
                 int valid_spec = 0;
                 unsigned int j = 0;
-                for (j = 0; j < sizeof(validspec) - 1; j++)
+                for (j = 0; j < sizeof(validspec); j++)
                 {
                     if (format[i + 1] == validspec[j])
                     {
