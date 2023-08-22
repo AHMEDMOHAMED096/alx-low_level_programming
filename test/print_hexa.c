@@ -13,6 +13,7 @@ int print_hexa(long n, int base, char caseSpecifier)
 	int count = 0;
 	char symbolsLower[] = "0123456789abcdef";
 	char symbolsUpper[] = "0123456789ABCDEF";
+
 	char* symbols = (caseSpecifier == 'x') ? symbolsLower : symbolsUpper;
 	if (n < 0)
 	{
@@ -23,8 +24,8 @@ int print_hexa(long n, int base, char caseSpecifier)
 	return _putchar(symbols[n]) + 1;
 	else
 	{
-		count = print_hexa(n / base , base, caseSpecifier);
-		return count + print_hexa(n % base, base, caseSpecifier);
+	count = print_hexa(n / base , base, caseSpecifier);
+	return count + print_hexa(n % base, base, caseSpecifier);
 	}
 
 }
