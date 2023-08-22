@@ -54,7 +54,8 @@ int _printf(const char *format, ...)
             if (format[i + 1] != '\0')
             {
                 int valid_spec = 0;
-                for (int j = 0; j < sizeof(validspec) - 1; j++)
+                int j = 0;
+                for (j = 0; j < sizeof(validspec) - 1; j++)
                 {
                     if (format[i + 1] == validspec[j])
                     {
