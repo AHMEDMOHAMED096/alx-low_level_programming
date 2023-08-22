@@ -40,9 +40,9 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
-    _printf("%u\n", num);
-    printf("%u\n", num);
-    _printf("%d\n", num2);
+    _printf("%%\n", num);
+    printf("%%\n", num);
+    _printf("% \n", num2);
     printf("%d\n", num2);
 
     return (0);
