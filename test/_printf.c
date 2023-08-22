@@ -3,7 +3,8 @@
 * _printf - a custom function alternative to printf
 * @count: detects number of characters to be printed on stdout
 * @ap: list of variadic arguments
-* return: return @count
+* *format: string of variadic arguments
+* return: return int
 */
 
 
@@ -38,9 +39,7 @@ int _printf(const char *format, ...)
 					i++;
 				}
 				else
-				{
-					count += write(1, &format[i], 1);
-				}
+				count += write(1, &format[i], 1);
 			}
 		}
 		else
@@ -50,5 +49,3 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-
-

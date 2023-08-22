@@ -2,7 +2,10 @@
 /**
 * print_hexa - prints hexadecimal numbers to stdout according to its casespeifier
 * @count: detects number of characters to be printed on stdout
-* return: return @count
+* @n: given number by variadic arguments list
+* @base: the base of given number
+* @casespecifier: to differentiate between uppercase and lowercase
+* return: return int
 */
 
 int print_hexa(long n, int base, char caseSpecifier)

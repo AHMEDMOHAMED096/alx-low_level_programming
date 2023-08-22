@@ -2,7 +2,8 @@
 /**
 * print_str - prints string to stdout
 * @count: detects number of characters to be printed on stdout
-* return: return @count
+* @str: the string to be printed
+* return: return int
 */
 
 int print_str(char *str)
@@ -14,5 +15,5 @@ int print_str(char *str)
 	++count;
 	++str;
 	}
-	return count;
+	return (count);
 }

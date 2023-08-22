@@ -2,12 +2,15 @@
 /**
 * print_digit - prints a given number according to its base
 * @count: detects number of characters to be printed on stdout
-* return: return @count
+* @n: a given number by variadic arguments list
+* @base: base of the number
+* return: return int
 */
 
 int print_digit(long n, int base)
 {
 	int count = 0;
+
 	char symbols[] = "0123456789abcdef";
 	if (n < 0)
 	{
@@ -19,7 +22,7 @@ int print_digit(long n, int base)
 	else
 	{
 		count = print_digit(n / base , base);
-		return count + print_digit(n % base, base);
+		return (count + print_digit(n % base, base));
 	}
 
 }
