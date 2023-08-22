@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+* _printf - a custom function alternative to printf
+* print_format - checks for the format specifier after '%'
+* @count: detects number of characters to be printed on stdout
+* return: return @count
+*/
 
 int print_format(char spec, va_list ap)
 {
@@ -29,7 +35,7 @@ int print_format(char spec, va_list ap)
 	count += _putchar('%');
 	else
 	count += write(1, &spec, 1);
-	return count;
+	return (count);
 }
 
 
