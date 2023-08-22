@@ -57,10 +57,7 @@ int _printf(const char *format, ...)
         if (format[i] == '%')
         count += print_format((format[++i]), ap);
 		else
-        {
-        count += _putchar('%');
         count += write(1, format + i, 1);
-        }
         i++;
     }
     va_end(ap);
