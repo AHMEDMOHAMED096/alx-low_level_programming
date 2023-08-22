@@ -1,7 +1,6 @@
 #include "main.h"
 /**
 * print_format- checks for the format specifier after '%'
-* @count: detects number of characters to be printed on stdout
 * @ap: list of variadic arguments
 * @spec: the format specifier to be checked by @print_format
 * Return: return number of printed characters

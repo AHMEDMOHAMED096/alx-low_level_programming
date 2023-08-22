@@ -1,6 +1,7 @@
 #include "main.h"
 /**
-* print_hexa - prints hexadecimal numbers to stdout according to its casespeifier
+* print_hexa - prints hexadecimal numbers to stdout 
+* according to its casespeifier.
 * @n: given number by variadic arguments list
 * @base: the base of given number
 * @casespecifier: to differentiate between uppercase and lowercase
@@ -12,8 +13,8 @@ int print_hexa(long n, int base, char caseSpecifier)
 	int count = 0;
 	char symbolsLower[] = "0123456789abcdef";
 	char symbolsUpper[] = "0123456789ABCDEF";
+	char *symbols = (caseSpecifier == 'x') ? symbolsLower : symbolsUpper;
 
-	char* symbols = (caseSpecifier == 'x') ? symbolsLower : symbolsUpper;
 	if (n < 0)
 	{
 		write(1, "-", 1);
@@ -26,5 +27,4 @@ int print_hexa(long n, int base, char caseSpecifier)
 	count = print_hexa(n / base , base, caseSpecifier);
 	return (count + print_hexa(n % base, base, caseSpecifier));
 	}
-
 }

@@ -1,9 +1,8 @@
 #include "main.h"
 /**
 * _printf - a custom function alternative to printf
-* @count: detects number of characters to be printed on stdout
-* @ap: list of variadic arguments
-* *format: string of variadic arguments
+* ap: list of variadic arguments
+* @format: string of variadic arguments
 * Return: return number of printed characters
 */
 
