@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
     va_list ap;
     int count;
     int i;
-    const char validspec[]= "d, i, o, u, x, X, f, s, b, p, c, %";
+    const char validspec[]= "diouxXfsbpc%";
     va_start(ap, format);
     count = 0;
     i = 0;
@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
     {
         if (format[i] == '%')
         {
-            if (format[i + 1] != validspec[i])
+            if (format[i + 1] != validspec)
             {
                 count += _putchar('%');
                 count += _putchar(va_arg(ap, int));
