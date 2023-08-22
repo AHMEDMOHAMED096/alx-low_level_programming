@@ -44,15 +44,15 @@ int _printf(const char *format, ...)
     va_list ap;
     int count;
     int i;
+    const char validspec[]= "d, i, o, u, x, X, f, s, b, p, c, %";
     va_start(ap, format);
     count = 0;
     i = 0;
-    const char validspec[]= "d, i, o, u, x, X, f, s, b, p, c, %";
     while (format[i] != '\0')
     {
         if (format[i] == '%')
         {
-            if (format[i + 1] != validspec)
+            if (format[i + 1] != validspec[i])
             {
                 count += _putchar('%');
                 count += _putchar(va_arg(ap, int));
