@@ -43,15 +43,17 @@ int _printf(const char *format, ...)
 {
     va_list ap;
     int count;
+    int i;
     va_start(ap, format);
     count = 0;
-    while (*format != '\0')
+    i = 0;
+    while (format[i] != '\0')
     {
-        if (*format == '%')
-        count += print_format(*(++format), ap);
+        if (format[i] == '%')
+        count += print_format((format[++i]), ap);
 		else
-        count += write(1, format, 1);
-        ++format;
+        count += write(1, format + i, 1);
+        ++i;
     }
     va_end(ap);
     return count;
