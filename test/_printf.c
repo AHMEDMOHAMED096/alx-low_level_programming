@@ -10,9 +10,9 @@ int print_format(char spec, va_list ap)
 	count += print_str(va_arg(ap, char *));
 	else if (spec == 'i' || spec == 'd')
 	count += print_digit((long)(va_arg(ap, int)), 10);
-	else if(spec == 'x')
+	else if (spec == 'x')
 	count += print_hexa((long)(va_arg(ap, unsigned int)), 16, 'x');
-	else if(spec == 'X')
+	else if (spec == 'X')
 	count += print_hexa((long)(va_arg(ap, unsigned int)), 16, 'X');
 	else if (spec == 'u')
 	count += print_digit((long)(va_arg(ap, unsigned int)), 10);
@@ -39,8 +39,8 @@ int _printf(const char *format, ...)
 	int count = 0;
 	int i = 0;
 	const char validspec[] = "diouxXfsbpc%";
-	va_start(ap, format);
 
+	va_start(ap, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -49,6 +49,7 @@ int _printf(const char *format, ...)
 			{
 				int valid_spec = 0;
 				unsigned int j = 0;
+
 				for (j = 0; j < sizeof(validspec); j++)
 				{
 					if (format[i + 1] == validspec[j])
