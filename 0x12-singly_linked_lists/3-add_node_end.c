@@ -22,12 +22,12 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		list_t *temp = *head;
+
 		while (temp->next != NULL)
 		{
 			temp = temp->next;
 		}
 		temp->next = ptr;
 	}
-	
 	return (*head);
 }
