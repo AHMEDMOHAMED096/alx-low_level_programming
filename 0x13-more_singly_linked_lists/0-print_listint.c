@@ -2,7 +2,7 @@
 
 /**
 * print_listint - prints all the elements of a listint_t list
-* @h: pointer to struct list_t
+* @h: pointer to struct listint_t
 * Return: return size_t
 */
 
