@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
-* print_listlen - prints all the elements of a listint_t list
+* print_listint - prints all the elements of a listint_t list
 * @h: pointer to struct list_t
 * Return: return size_t
 */
