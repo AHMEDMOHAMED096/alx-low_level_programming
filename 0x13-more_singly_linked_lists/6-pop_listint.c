@@ -20,7 +20,7 @@ int pop_listint(listint_t **head)
 	}
 	return (*head);
 	listint_t *ptr = *head;
-	
+
 	while (ptr != NULL)
 	{
 		printf("%d\n", ptr->n);
