@@ -15,15 +15,11 @@ int pop_listint(listint_t **head)
 	{
 	listint_t *temp = *head;
 
-	head = head->next;
+	*head = *head->next;
+	int n = *head->n;
+	
 	free(temp);
 	}
-	return (*head);
-	listint_t *ptr = *head;
-
-	while (ptr != NULL)
-	{
-		printf("%d\n", ptr->n);
-		ptr = ptr->next;
-	}
+	return (n);
+	
 }
