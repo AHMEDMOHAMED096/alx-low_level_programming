@@ -3,7 +3,7 @@
 /**
 * get_nodeint_at_index - returns the nth node of a listint_t linked list.
 * @head: the head of first node
-* @index: index of the node 
+* @index: index of the node
 * Return: pointer to the node we want
 */
 
