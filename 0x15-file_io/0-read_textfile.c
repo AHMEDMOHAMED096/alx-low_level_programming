@@ -9,24 +9,32 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int *fd = open(filename, O_RDWR);
-	char *s = malloc(letters);
-	char *buffer = s;
-	int count = 0;
-	int i = 0;
+	int read_letters = 0;
+	int total = 0;
+	int write_letters = 0;
+	char buffer[letters + 1];
 
-	if (fd == NULL || filename == NULL)
+	if (filename == NULL)
 		return (0);
 
-	read(fd, buffer, sizeof(filename));
+	int fd = open(filename, O_RDWR);
 
-	for (i = 0; filename[i] != '\0'; i++)
+	if (fd == -1 || filename == -1)
+		return (0);
+
+	read_letters = read(fd, buffer, letters);
+	while (read_letters > 0)
 	{
-		buffer[count] = filename[i];
-		buffer[++count];
+		buffer[read_letters] = '\0';
+	write_letters = write(1, buffer, read_letters);
+	if (write_letters < read_letters)
+	{
+		return (0);
+		close(fd);
 	}
-	write(1, filename, sizeof(filename));
-	free(s);
-	close(*fd);
-	return (buffer);
+		total += read_letters;
+
+	}
+	close(fd);
+	return (total);
 }
