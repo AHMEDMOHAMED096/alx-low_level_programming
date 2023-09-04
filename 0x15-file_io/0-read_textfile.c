@@ -9,17 +9,18 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	int fd;
 	int read_letters = 0;
 	int total = 0;
 	int write_letters = 0;
-	char buffer[letters + 1];
+	char buffer[letters];
 
 	if (filename == NULL)
 		return (0);
 
-	int fd = open(filename, O_RDWR);
+	fd = open(filename, O_RDWR);
 
-	if (fd == -1 || filename == -1)
+	if (fd == -1)
 		return (0);
 
 	read_letters = read(fd, buffer, letters);
