@@ -13,19 +13,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *s = malloc(letters);
 	char *buffer = s;
 	int count = 0;
+	int i = 0;
 
 	if (fd == NULL || filename == NULL)
 		return (0);
 
 	read(fd, buffer, sizeof(filename));
 
-	for (int i = 0; filename[i] != '\0'; i++)
+	for (i = 0; filename[i] != '\0'; i++)
 	{
 		buffer[count] = filename[i];
 		buffer[++count];
 	}
 	write(1, filename, sizeof(filename));
 	free(s);
-	close(fd);
-	return (count);
+	close(*fd);
+	return (buffer);
 }
