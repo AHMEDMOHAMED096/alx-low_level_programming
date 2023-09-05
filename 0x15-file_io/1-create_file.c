@@ -21,7 +21,7 @@ int create_file(const char *filename, char *text_content)
 	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0500);
 	if (fd == -1)
 	{
-		perror("fails");
+		write(fd, "fails", 5);
 		return (-1);
 	}
 write_text = write(fd, text_content, strlen(text_content));
