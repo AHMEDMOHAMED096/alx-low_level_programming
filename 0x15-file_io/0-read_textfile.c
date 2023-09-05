@@ -10,9 +10,9 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	int read_bytes = 0;
-	int total = 0;
-	int write_bytes = 0;
+	ssize_t read_bytes = 0;
+	ssize_t total = 0;
+	ssize_t write_bytes = 0;
 	char *buffer = malloc((letters + 1));
 
 	if (buffer == NULL)
