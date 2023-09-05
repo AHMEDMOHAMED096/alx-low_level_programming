@@ -33,7 +33,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 	}
 
-	read_bytes = read(fd, buffer, letters);
 	while (read_bytes != '\0')
 	{
 	write_bytes = write(STDOUT_FILENO, buffer, read_bytes);
