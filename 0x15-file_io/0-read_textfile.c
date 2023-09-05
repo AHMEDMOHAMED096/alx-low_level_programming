@@ -13,7 +13,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int read_bytes = 0;
 	ssize_t total = 0;
 	int write_bytes = 0;
-	char *buffer = malloc((1024));
+	char *buffer = malloc((letters));
 
 	if (buffer == NULL)
 	{
@@ -33,10 +33,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 	}
 
-	read_bytes = read(fd, buffer, 1024);
+	read_bytes = read(fd, buffer, letters);
 	while (read_bytes != 0)
 	{
-		if (read_bytes == -1 || read_bytes < 1024)
+		if (read_bytes == -1 || read_bytes < letters)
 		{
 			free(buffer);
 			return (0);
@@ -50,7 +50,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			close(fd);
 		}
 		total += read_bytes;
-		read_bytes = read(fd, buffer, 1024);
+		read_bytes = read(fd, buffer, letters);
 	}
 	free(buffer);
 	close(fd);
