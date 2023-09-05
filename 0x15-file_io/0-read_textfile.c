@@ -43,8 +43,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			return (0);
 			close(fd);
 		}
-		read_bytes = read(fd, buffer, letters);
 		total += read_bytes;
+		read_bytes = read(fd, buffer, letters);
 	}
 	free(buffer);
 	close(fd);
