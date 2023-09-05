@@ -23,14 +23,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!filename)
 		return (0);
 
-	fd = open(filename, O_RDWR);
+	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (0);
 
 	read_bytes = read(fd, buffer, letters);
 	if (read_bytes < 0)
 		return (0);
-
+	if (read_bytes != letters)
+	{
+		close(fd);
+		return (total);
+	}
 	while (read_bytes != 0)
 	{
 	write_bytes = write(STDOUT_FILENO, buffer, read_bytes);
