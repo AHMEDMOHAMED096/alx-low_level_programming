@@ -12,16 +12,15 @@ int create_file(const char *filename, char *text_content)
 	int fd;
 
 	if (!filename)
-		return (0);
+		return (-1);
+	if (!text_content)
+		text_content = "";
 
-
-	fd = open(filename, S_IRUSR | S_IWUSR);
+	fd = open(filename, O_RDONLY | O_CREAT, 00500);
 	if (fp == -1)
 	{
 		return (-1);
 		write(STDERR_FILENO, “fails”, 5);
 	}
-
-
 	
 }
