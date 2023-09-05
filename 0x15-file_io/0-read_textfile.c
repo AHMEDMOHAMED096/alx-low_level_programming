@@ -21,12 +21,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	if (filename == NULL)
+	{
 		return (0);
-
+		free(buffer);
+	}
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
+	{
 		return (0);
+		free(buffer);
+	}
 
 	read_bytes = read(fd, buffer, letters);
 	while (read_bytes > 0)
@@ -34,6 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	write_bytes = write(STDOUT_FILENO, buffer, read_bytes);
 		if (write_bytes == -1 || write_bytes != read_bytes)
 		{
+			free(buffer);
 			return (0);
 			close(fd);
 		}
