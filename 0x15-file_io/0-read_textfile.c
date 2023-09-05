@@ -46,12 +46,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		total += read_bytes;
 		read_bytes = read(fd, buffer, letters);
 	}
-	  if (read_bytes == -1)
-	  	{
-        free(buffer);
-        close(fd);
-        return 0;
-    	}
 	free(buffer);
 	close(fd);
 	return (total);
