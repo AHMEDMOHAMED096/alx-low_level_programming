@@ -1,5 +1,4 @@
 #include "main.h"
-#define BUFFER_SIZE 1024
 
 /**
  * main - check the code
@@ -15,7 +14,7 @@ int main(int argc, char *argv[])
 	int close_file;
 	ssize_t read_bytes = 0;
 	ssize_t write_bytes = 0;
-	char *buffer = malloc(char * BUFFER_SIZE);
+	char *buffer = malloc(sizeof(char) * 1024);
 
 	if (argc != 3)
 	{
@@ -23,7 +22,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	from = open(argv[1], O_RDONLY);
-	read_bytes = read(from, buffer, BUFFER_SIZE);
+	read_bytes = read(from, buffer, 1024);
 
 	if (buffer == NULL || read_bytes == -1)
 	{
