@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	from = open(argv[1], O_RDONLY);
-	read_bytes = read(from, buffer, 1024);
+	read_bytes = read(from, &buffer, 1024);
 
 	if (read_bytes == -1)
 	{
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	}
 
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	write_bytes = write(to, buffer, read_bytes);
+	write_bytes = write(to, &buffer, read_bytes);
 	if (write_bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
