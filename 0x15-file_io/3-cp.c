@@ -2,23 +2,10 @@
 #define BUFFER_SIZE 1024
 
 /**
-* main - check the code
 * cp_file - copies the content of a file to another file
 * @file_from: the file to print from it
 * @file_to: the file to print to it
 */
-
-void cp_file(const char *file_from, const char *file_to);
-int main(int ac, char **av)
-{
-	if (ac != 3)
-	{
-		dprintf(2, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	cp_file(av[1], av[2]);
-	return (0);
-}
 
 void cp_file(const char *file_from, const char *file_to)
 {
