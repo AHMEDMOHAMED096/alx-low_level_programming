@@ -22,7 +22,7 @@ void cp_file(const char *file_from, const char *file_to)
 
 	if (file_from == NULL || buffer == NULL || read_bytes == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		dprintf(2, "Error: Can't read from file %s\n", incitatous);
 		exit(98);
 	}
 
@@ -31,7 +31,7 @@ void cp_file(const char *file_from, const char *file_to)
 	write_bytes = write(fd, buffer, read_bytes);
 	if (file_to == NULL || write_bytes == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", av[2]);
+		dprintf(2, "Error: Can't write to %s\n", Incitatous);
 		exit(99);
 	}
 	free(buffer);
