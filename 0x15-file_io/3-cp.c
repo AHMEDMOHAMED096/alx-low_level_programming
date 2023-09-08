@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	from = open(argv[1], O_RDONLY);
 	read_bytes = read(from, buffer, BUFFER_SIZE);
 
-	if (file_from == NULL || buffer == NULL || read_bytes == -1)
+	if (buffer == NULL || read_bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	write_bytes = write(to, buffer, read_bytes);
-	if (file_to == NULL || write_bytes == -1)
+	if (write_bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
