@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
 	int from;
 	int to;
 	int close_file;
-	ssize_t read_bytes = 0;
-	ssize_t write_bytes = 0;
+	int read_bytes;
+	int write_bytes;
 	char *buffer = malloc(sizeof(char) * 1024);
 
 	if (argc != 3)
