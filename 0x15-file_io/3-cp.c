@@ -4,8 +4,8 @@ void cp_file(const char *file_from, const char *file_to);
 
 /**
  * main - check the code
- * @ac: the number of command line arguments
- * @av: the command line arguments to be passed
+ * @argc: the number of command line arguments
+ * @argv: the command line arguments to be passed
  * Return: Always 0
  */
 
