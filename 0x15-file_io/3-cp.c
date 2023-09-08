@@ -2,8 +2,8 @@
 #define BUFFER_SIZE 1024
 
 /**
-* main - entry point
 * cp_file - copies the content of a file to another file
+* main - entry point
 * @file_from: the file to print from it
 * @file_to: the file to print to it
 */
@@ -29,7 +29,7 @@ void cp_file(const char *file_from, const char *file_to)
 	ssize_t write_bytes = 0;
 	char *buffer = malloc(BUFFER_SIZE);
 	fd2 = open(file_from, WRONLY, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-	
+
 	read_bytes = read(fd2, buffer, BUFFER_SIZE);
 
 	if (file_from == NULL || buffer == NULL || read_bytes == -1)
@@ -39,7 +39,7 @@ void cp_file(const char *file_from, const char *file_to)
 	}
 
 	fd = open("file_to", WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-	
+
 	write_bytes = write(fd, buffer, read_bytes);
 	if (file_to == NULL || write_bytes == -1)
 	{
