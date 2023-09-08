@@ -29,7 +29,7 @@ void cp_file(const char *file_from, const char *file_to)
 	ssize_t write_bytes = 0;
 	char *buffer = malloc(BUFFER_SIZE);
 
-	fd2 = open(file_from, WRONLY, S_IRUSR | S_IWUSR 
+	fd2 = open(file_from, WRONLY, S_IRUSR | S_IWUSR
 												| S_IRGRP | S_IWGRP | S_IROTH);
 	read_bytes = read(fd2, buffer, BUFFER_SIZE);
 
@@ -39,7 +39,7 @@ void cp_file(const char *file_from, const char *file_to)
 		exit(98);
 	}
 
-	fd = open("file_to", WRONLY | O_TRUNC, S_IRUSR | S_IWUSR 
+	fd = open("file_to", WRONLY | O_TRUNC, S_IRUSR | S_IWUSR
 												| S_IRGRP | S_IWGRP | S_IROTH);
 	write_bytes = write(fd, buffer, read_bytes);
 	if (file_to == NULL || write_bytes == -1)
