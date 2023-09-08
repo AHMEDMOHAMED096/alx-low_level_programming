@@ -11,7 +11,7 @@ void cp_file(const char *file_from, const char *file_to);
 
 int main(int argc, char **argv[])
 {
-	if (ac != 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
@@ -52,7 +52,7 @@ void cp_file(const char *file_from, const char *file_to)
 		exit(99);
 	}
 	free(buffer);
-	close_file = close(fd);
+	close_file = close(to);
 	if (close_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
