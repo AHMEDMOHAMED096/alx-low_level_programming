@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
 	to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	write_bytes = write(to, buffer, read_bytes);
-	if (write_bytes == -1 || argv[2] == NULL)
+	if (write_bytes == -1 || !argv[2])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
