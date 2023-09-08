@@ -9,7 +9,7 @@
 */
 
 void cp_file(const char *file_from, const char *file_to);
-int main(ac, char **av)
+int main(int ac, char **av)
 {
 	if (ac != 3)
 	{
