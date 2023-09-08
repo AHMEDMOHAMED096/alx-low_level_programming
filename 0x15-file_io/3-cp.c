@@ -11,23 +11,6 @@ void cp_file(const char *file_from, const char *file_to);
 
 int main(int argc, char *argv[])
 {
-	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	cp_file(argv[1], argv[2]);
-	return (0);
-}
-
-/**
-* cp_file - copies the content of a file to another file
-* @file_from: the file to print from it
-* @file_to: the file to print to it
-*/
-
-void cp_file(const char *file_from, const char *file_to)
-{
 	int from;
 	int to;
 	int close_file;
@@ -35,6 +18,11 @@ void cp_file(const char *file_from, const char *file_to)
 	ssize_t write_bytes = 0;
 	char *buffer = malloc(BUFFER_SIZE);
 
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 	from = open(argv[1], O_RDONLY);
 	read_bytes = read(from, buffer, BUFFER_SIZE);
 
@@ -58,4 +46,5 @@ void cp_file(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to);
 		exit(100);
 	}
+	return (0);
 }
