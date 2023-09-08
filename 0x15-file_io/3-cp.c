@@ -2,8 +2,8 @@
 #define BUFFER_SIZE 1024
 
 /**
-* cp_file - copies the content of a file to another file
 * main - check the code
+* cp_file - copies the content of a file to another file
 * @file_from: the file to print from it
 * @file_to: the file to print to it
 */
