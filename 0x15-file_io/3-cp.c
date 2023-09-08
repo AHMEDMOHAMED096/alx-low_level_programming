@@ -7,7 +7,7 @@
  * Return: Always 0
  */
 
-int main(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
 	int from;
 	int to;
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	from = open(argv[1], O_RDONLY);
 	read_bytes = read(from, buffer, 1024);
 
-	if (read_bytes == -1 || argv[1] == NULL)
+	if (read_bytes < 0 || argv[1] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -32,17 +32,17 @@ int main(int argc, char *argv[])
 
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	write_bytes = write(to, buffer, read_bytes);
-	if (write_bytes == -1)
+	if (write_bytes == -1 || argv[2] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	free(buffer);
 	close_file = close(to);
 	if (close_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to);
 		exit(100);
 	}
-	return (0);
+	free(buffer);
+	close(to);
 }
