@@ -30,8 +30,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR
-														| S_IRGRP | S_IWGRP | S_IROTH);
+	to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	write_bytes = write(to, buffer, read_bytes);
 	if (write_bytes == -1 || argv[2] == NULL)
 	{
