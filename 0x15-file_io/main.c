@@ -2,11 +2,12 @@
 
 /**
  * main - check the code
- *
+ * @ac: the number of command line arguments
+ * @av: the command line arguments to be passed
  * Return: Always 0
  */
 
- int main(int ac, char **av)
+int main(int ac, char **av)
 {
 	if (ac != 3)
 	{
