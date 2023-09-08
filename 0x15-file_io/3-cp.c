@@ -1,5 +1,6 @@
 #include "main.h"
 #define BUFFER_SIZE 1024
+void cp_file(const char *file_from, const char *file_to);
 
 /**
  * main - check the code
@@ -7,8 +8,6 @@
  * @av: the command line arguments to be passed
  * Return: Always 0
  */
-
-void cp_file(const char *file_from, const char *file_to);
 
 int main(int ac, char **av)
 {
