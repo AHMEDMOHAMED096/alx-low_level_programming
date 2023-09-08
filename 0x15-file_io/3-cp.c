@@ -1,6 +1,5 @@
 #include "main.h"
 #define BUFFER_SIZE 1024
-void cp_file(const char *file_from, const char *file_to);
 
 /**
  * main - check the code
