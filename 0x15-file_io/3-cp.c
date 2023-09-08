@@ -9,7 +9,7 @@ void cp_file(const char *file_from, const char *file_to);
  * Return: Always 0
  */
 
-int main(int argc, char **argv[])
+int main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
@@ -55,7 +55,7 @@ void cp_file(const char *file_from, const char *file_to)
 	close_file = close(to);
 	if (close_file == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to);
 		exit(100);
 	}
 }
