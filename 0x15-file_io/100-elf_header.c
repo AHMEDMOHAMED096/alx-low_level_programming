@@ -27,6 +27,7 @@ void check_argc(int argc)
 int open_file(char *filename)
 {
 	int fd = open(filename, O_RDONLY);
+
 	if (fd < 0)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", filename);
@@ -44,6 +45,7 @@ int open_file(char *filename)
 void read_header(int fd, Elf64_Ehdr *header)
 {
 	ssize_t read_status = read(fd, header, sizeof(*header));
+
 	if (read_status < 0)
 	{
 		fprintf(stderr, "Error: Can't read from file\n");
@@ -78,18 +80,18 @@ void print_header(Elf64_Ehdr *header)
 	printf("%02x ", header->e_ident[i]);
 	printf("\n");
 
-	printf("Class:                             %s\n", 
+	printf("Class:                             %s\n",
 	header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
-	printf("Data:                              %s\n", 
+	printf("Data:                              %s\n",
 	header->e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "2's complement, big endian");
-	printf("Version:                           %d (current)\n", 
+	printf("Version:                           %d (current)\n",
 	header->e_ident[EI_VERSION]);
 	printf("OS/ABI:                            UNIX - System V\n");
-	printf("ABI Version:                       %d\n", 
+	printf("ABI Version:                       %d\n",
 	header->e_ident[EI_OSABI]);
-	printf("Type:                              %s\n", 
+	printf("Type:                              %s\n",
 	header->e_type == ET_EXEC ? "EXEC (Executable file)" : "DYN (Shared object file)");
-	printf("Entry point address:               0x%lx\n", 
+	printf("Entry point address:               0x%lx\n",
 	header->e_entry);
 }
 
