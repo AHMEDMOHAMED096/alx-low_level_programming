@@ -37,7 +37,8 @@ int main(int argc, char *argv[])
 	while ((read_status = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		write_status = write(file_to, buffer, read_status);
-		if (write_status != read_status) {
+		if (write_status != read_status)
+		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
