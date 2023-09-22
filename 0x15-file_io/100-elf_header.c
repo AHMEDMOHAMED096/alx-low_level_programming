@@ -28,32 +28,30 @@ void check_argc(int argc)
 void process_file(char *filename)
 {
 	int fd = open(filename, O_RDONLY);
+
 	if (fd < 0)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-
 	Elf64_Ehdr header;
 	ssize_t read_status = read(fd, &header, sizeof(header));
+
 	if (read_status < 0)
 	{
 		fprintf(stderr, "Error: Can't read from file\n");
 		exit(98);
 	}
-
 	if (header.e_ident[EI_MAG0] != ELFMAG0 || header.e_ident[EI_MAG1] != ELFMAG1 ||
 		header.e_ident[EI_MAG2] != ELFMAG2 || header.e_ident[EI_MAG3] != ELFMAG3)
 	{
 		fprintf(stderr, "Error: %s is not an ELF file\n", filename);
 		exit(98);
 	}
-
 	printf("Magic:   ");
 	for (int i = 0; i < EI_NIDENT; i++)
 	printf("%02x ", header.e_ident[i]);
 	printf("\n");
-
 	printf("Class:                             %s\n",
 	header.e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
 	printf("Data:                              %s\n",
@@ -65,7 +63,6 @@ void process_file(char *filename)
 	printf("Type:                              %s\n",
 	header.e_type == ET_EXEC ? "EXEC (Executable file)" : "DYN (Shared object file)");
 	printf("Entry point address:               0x%lx\n", header.e_entry);
-
 	if (close(fd) < 0)
 	{
 		fprintf(stderr, "Error: Can't close fd %d\n", fd);
@@ -82,5 +79,5 @@ int main(int argc, char *argv[])
 {
 	check_argc(argc);
 	process_file(argv[1]);
-	return 0;
+	return (0);
 }
