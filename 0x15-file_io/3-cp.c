@@ -1,4 +1,5 @@
 #include "main.h"
+#define BUFFER_SIZE 1024
 
 /**
  * main - check the code
@@ -9,41 +10,56 @@
 
 int main(int argc, char *argv[])
 {
-	int from;
-	int to;
-	int close_file;
-	int read_bytes;
-	int write_bytes;
-	char *buffer = malloc(sizeof(char) * 1024);
+	int file_from, file_to;
+	ssize_t read_status, write_status;
+	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	from = open(argv[1], O_RDONLY);
-	read_bytes = read(from, buffer, 1024);
 
-	if (read_bytes < 0 || argv[1] == NULL)
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
-	to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	write_bytes = write(to, buffer, read_bytes);
-	if (write_bytes == -1 || !argv[2])
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (file_to < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	close_file = close(to);
-	if (close_file == -1)
+
+	while ((read_status = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to);
+		write_status = write(file_to, buffer, read_status);
+		if (write_status != read_status) {
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+	}
+
+	if (read_status < 0)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+
+	if (close(file_from) < 0)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-	free(buffer);
-	close(to);
+
+	if (close(file_to) < 0)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", file_to);
+		exit(100);
+	}
+
 	return (0);
 }
