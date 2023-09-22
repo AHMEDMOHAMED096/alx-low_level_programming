@@ -32,7 +32,7 @@ int open_file(char *filename)
 		fprintf(stderr, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	return fd;
+	return (fd);
 }
 
 /**
@@ -78,13 +78,19 @@ void print_header(Elf64_Ehdr *header)
 	printf("%02x ", header->e_ident[i]);
 	printf("\n");
 
-	printf("Class:                             %s\n", header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
-	printf("Data:                              %s\n", header->e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "2's complement, big endian");
-	printf("Version:                           %d (current)\n", header->e_ident[EI_VERSION]);
+	printf("Class:                             %s\n", 
+	header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
+	printf("Data:                              %s\n", 
+	header->e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "2's complement, big endian");
+	printf("Version:                           %d (current)\n", 
+	header->e_ident[EI_VERSION]);
 	printf("OS/ABI:                            UNIX - System V\n");
-	printf("ABI Version:                       %d\n", header->e_ident[EI_OSABI]);
-	printf("Type:                              %s\n", header->e_type == ET_EXEC ? "EXEC (Executable file)" : "DYN (Shared object file)");
-	printf("Entry point address:               0x%lx\n", header->e_entry);
+	printf("ABI Version:                       %d\n", 
+	header->e_ident[EI_OSABI]);
+	printf("Type:                              %s\n", 
+	header->e_type == ET_EXEC ? "EXEC (Executable file)" : "DYN (Shared object file)");
+	printf("Entry point address:               0x%lx\n", 
+	header->e_entry);
 }
 
 /**
@@ -122,6 +128,6 @@ int main(int argc, char *argv[])
 
 	close_file(fd);
 
-	return 0;
+	return (0);
 }
 
