@@ -9,7 +9,7 @@ int _islower(int c)
 {
 	int i;
 
-	i = islower('c');
+	i = islower(c);
 	while (i)
 	{
 		_putchar(i + '0');
