@@ -7,14 +7,9 @@
 
 int _islower(int c)
 {
-	int i;
 
-	i = islower(c);
-	while (i)
-	{
-		_putchar(i + '0');
+	if (c >= 97 || c <= 122)
 		return (1);
-	}
 	_putchar('\n');
 	return (0);
 }
