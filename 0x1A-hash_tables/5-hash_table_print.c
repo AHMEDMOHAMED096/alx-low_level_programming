@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print - prints a hash table.
+ * hash_table_print - Prints a hash table.
  * @ht: A pointer to hash table.
  */
 
@@ -9,7 +9,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *head;
 	unsigned long int i = 0;
-	char flag = 1;
+	char flag = 0;
 
 	if (!ht)
 		return;
@@ -21,9 +21,9 @@ void hash_table_print(const hash_table_t *ht)
 		head = ht->array[i];
 		while (head != NULL)
 		{
-			if (flag == 0)
+			if (flag == 1)
 				printf(", ");
-			flag = 0;
+			flag = 1;
 			printf("'%s': '%s'", head->key, head->value);
 			head = head->next;
 		}
