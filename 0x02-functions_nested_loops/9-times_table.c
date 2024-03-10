@@ -26,8 +26,6 @@ void times_table(void)
 				_putchar(result + '0');
 			if (n2 < 9)
 				_putchar(',');
-			else
-				_putchar('$');
 			if (result >= 10)
 				_putchar(' ');
 			else
