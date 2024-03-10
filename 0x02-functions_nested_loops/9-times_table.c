@@ -15,11 +15,13 @@ void times_table(void)
 		{
 			result = n1 * n2;
 			_putchar(result + '0');
-			if (n2 < 10)
+			if (n2 < 9)
 			{
 				_putchar(',');
 				_putchar('\t');
 			}
+			else
+				_putchar('$');
 		}
 		_putchar('\n');
 	}
