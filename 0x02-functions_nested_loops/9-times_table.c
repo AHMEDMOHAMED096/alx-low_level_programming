@@ -17,11 +17,11 @@ void times_table(void)
 			_putchar(result + '0');
 			if (n2 < 10)
 			{
-				_putchar(",");
-				_putchar("\t");
+				_putchar(',');
+				_putchar('\t');
 			}
 		}
-		_putchar("\n");
+		_putchar('\n');
 	}
 	return (0);
 }
