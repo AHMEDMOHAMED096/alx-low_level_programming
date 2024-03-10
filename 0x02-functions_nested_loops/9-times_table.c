@@ -18,12 +18,12 @@ void times_table(void)
 			printf("%d", result);
 			if (n2 < 9)
 			{
-				_putchar(',');
-				_putchar('\t');
+				putchar(',');
+				putchar('\t');
 			}
 			else
-				_putchar('$');
+				putchar('$');
 		}
-		_putchar('\n');
+		putchar('\n');
 	}
 }
