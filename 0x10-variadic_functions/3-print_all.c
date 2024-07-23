@@ -31,10 +31,12 @@ void print_all(const char *const format, ...)
 				break;
 
 			case 's':
+				while (va_arg(args, char *) != NULL)
+				{
+					printf("%s", va_arg(args, char *));
+				}
 				if (va_arg(args, char *) == NULL)
 					printf("(nil)");
-				else
-					printf("%s", va_arg(args, char *));
 				break;
 			default:
 				type++;
