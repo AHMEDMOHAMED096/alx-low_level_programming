@@ -9,10 +9,7 @@
 void print_all(const char *const format, ...)
 {
 	va_list args;
-	char *s;
-	char c;
-	float f;
-	int type = 0, i;
+	int type = 0;
 
 	va_start(args, format);
 	if (format)
@@ -22,7 +19,7 @@ void print_all(const char *const format, ...)
 			switch (format[type])
 			{
 			case 'c':
-				printf("%c", va_arg(args, char));
+				printf("%c", va_arg(args, int));
 				break;
 
 			case 'i':
@@ -30,7 +27,7 @@ void print_all(const char *const format, ...)
 				break;
 
 			case 'f':
-				printf("%f", va_arg(args, float));
+				printf("%f", va_arg(args, double));
 				break;
 
 			case 's':
