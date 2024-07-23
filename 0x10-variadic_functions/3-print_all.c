@@ -3,63 +3,49 @@
 
 /**
  * print_all - prints anything.
- * @format: the number of arguments types to be passed
+ * @format: list of types of arguments passed to the function
  */
 
-void print_all(const char * const format, ...)
+void print_all(const char *const format, ...)
 {
 	va_list args;
 
-	va_start(args, format)
-	
-	int type = 0;
+	va_start(args, format);
+	int type = 0, i;
 	char *s;
-	int i;
 	char c;
 	float f;
 
-	
 	if (format)
 	{
-	
 		while (format[type] != '\0')
 		{
 			switch (format[type])
 			{
 			case 'c':
-			c = va_arg(args, int);
-			printf("%c", c);
-			break;
-
+				printf("%c", va_arg(args, char));
+				break;
 			case 'i':
-			i = va_arg(args, int);
-			printf("%d", i);
-			break;
+				printf("%d", va_arg(args, int));
+				break;
 
 			case 'f':
-			f = va_arg(args, double);
-			printf("%f", f);
-			break;
+				printf("%f", va_arg(args, float));
+				break;
 
 			case 's':
-			s = va_arg(args, char *);
-			if (s == NULL)
-			{
-			printf("(nil)");
-			}
-			else
-			{
-			printf("%s", s);
-			}
-			break;
-
+				if (va_arg(args, char *) == NULL)
+					printf("(nil)");
+				else
+					printf("%s", va_arg(args, char *));
+				break;
 			default:
-			type++;
-			break;
+				type++;
+				break;
 			}
-		type++;
+			type++;
 		}
-	}	
+	}
 	va_end(args);
 	printf("\n");
 }
