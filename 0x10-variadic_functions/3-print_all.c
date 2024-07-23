@@ -11,10 +11,10 @@ void print_all(const char *const format, ...)
 	va_list args;
 
 	va_start(args, format);
-	int type = 0, i;
 	char *s;
 	char c;
 	float f;
+	int type = 0, i;
 
 	if (format)
 	{
