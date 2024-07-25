@@ -1,6 +1,4 @@
 #include "main.h"
-#include <math.h>
-#include <stdio.h>
 
 /**
  * is_prime_rec - recursion function for checking for prime number
@@ -11,7 +9,7 @@
 
 int is_prime_rec(int n, int divisor)
 {
-	if (divisor > sqrt(n))
+	if (divisor * divisor > n)
 		return (1);
 	if (n % divisor == 0)
 		return (0);
