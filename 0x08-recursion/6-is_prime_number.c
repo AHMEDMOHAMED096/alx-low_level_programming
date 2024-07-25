@@ -1,11 +1,12 @@
 #include "main.h"
 #include <math.h>
+#include <stdio.h>
 
 /**
  * is_prime_rec - recursion function for checking for prime number
  * @n: the given number to be checked
- * @divisor: fixed starting from 2
- * Return: call the function again with incrementing divisor
+ * @divisor: starting from 2
+ * Return: 1 if the number is prime, 0 otherwise
  */
 
 int is_prime_rec(int n, int divisor)
@@ -20,7 +21,7 @@ int is_prime_rec(int n, int divisor)
 /**
  * is_prime_number - function that returns 1 if the input is a prime number
  * @n: the given number to be checked
- * Return: return the prime number
+ * Return:  1 if n is prime, 0 otherwise
  */
 
 int is_prime_number(int n)
